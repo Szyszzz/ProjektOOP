@@ -20,9 +20,26 @@ namespace ProjektOOP
     /// </summary>
     public partial class MainWindow : Window
     {
+        Engines enginesWindow = new Engines();
+
+        public static bool IsWindowOpen<T>(string name = "") where T : Window
+        {
+            return string.IsNullOrEmpty(name)
+                ? Application.Current.Windows.OfType<T>().Any()
+                : Application.Current.Windows.OfType<T>().Any(w => w.Name.Equals(name));
+        }
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void engineButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!IsWindowOpen<Engines>())
+                return;
+            else
+                enginesWindow.Show();   
         }
     }
 }
