@@ -1,0 +1,5 @@
+N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\ProjektOOP.csprojAssemblyReference.cache
+N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\MainWindow.g.cs
+N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\App.g.cs
+N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\ProjektOOP_MarkupCompile.cache
+N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\ProjektOOP_MarkupCompile.lref
