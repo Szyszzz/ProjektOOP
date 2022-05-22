@@ -60,3 +60,7 @@ N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\ProjektO
 N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\ProjektOOP.genruntimeconfig.cache
 N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\Engines.g.cs
 N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\Engines.baml
+N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\Chassis.g.cs
+N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\Chassis.baml
+N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\Makers.g.cs
+N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\Makers.baml

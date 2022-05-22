@@ -36,9 +36,9 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="1" MinWidth="90" HorizontalAlignment="Right" Margin="5,2,5,2">Car Makers</Button>
-            <Button Grid.Column="2" MinWidth="90" HorizontalAlignment="Right" Margin="5,2,5,2">Saved Chassis</Button>
-            <Button x:Name="engineButton" Grid.Column="3" MinWidth="90" MaxWidth="130" HorizontalAlignment="Right" Margin="5,2,5,2" Click="engineButton_Click">Saved Engines</Button>
+            <Button x:Name="MakersButton" Grid.Column="1" MinWidth="90" HorizontalAlignment="Right" Margin="5,2,5,2" Click="MakersButton_Click">Car Makers</Button>
+            <Button x:Name="ChassisButton" Grid.Column="2" MinWidth="90" HorizontalAlignment="Right" Margin="5,2,5,2" Click="ChassisButton_Click">Saved Chassis</Button>
+            <Button x:Name="EngineButton" Grid.Column="3" MinWidth="90" HorizontalAlignment="Right" Margin="5,2,5,2" Click="EngineButton_Click">Saved Engines</Button>
         </Grid>
         
         <!-- Row 2 - Inputs, Model, Engine, Chassis -->

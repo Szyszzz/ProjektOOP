@@ -27,24 +27,47 @@ namespace ProjektOOP
                 : Application.Current.Windows.OfType<T>().Any(w => w.Name.Equals(name));
         }
 
+        public void StartWindowOnTheLeft(Window win)
+        {
+            win.WindowStartupLocation = WindowStartupLocation.Manual;
+            win.Left = this.Left + this.Width - 10;
+            win.Top = this.Top;
+            win.Show();
+        }
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void engineButton_Click(object sender, RoutedEventArgs e)
+        private void EngineButton_Click(object sender, RoutedEventArgs e)
         {
             Engines enginesWindow = new Engines();
 
             if (!IsWindowOpen<Engines>())
                 return;
             else
-            {
-                enginesWindow.WindowStartupLocation = WindowStartupLocation.Manual;
-                enginesWindow.Left = this.Left + this.Width - 10;
-                enginesWindow.Top = this.Top;
-                enginesWindow.Show();
-            }
+                StartWindowOnTheLeft(enginesWindow);
+        }
+
+        private void ChassisButton_Click(object sender, RoutedEventArgs e)
+        {
+            Chassis chassisWindow = new Chassis();
+
+            if (!IsWindowOpen<Chassis>())
+                return;
+            else
+                StartWindowOnTheLeft(chassisWindow);
+        }
+
+        private void MakersButton_Click(object sender, RoutedEventArgs e)
+        {
+            Makers makersWindow = new Makers();
+
+            if (!IsWindowOpen<Makers>())
+                return;
+            else
+                StartWindowOnTheLeft(makersWindow);
         }
     }
 }
