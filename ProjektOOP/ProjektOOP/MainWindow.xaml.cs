@@ -20,8 +20,6 @@ namespace ProjektOOP
     /// </summary>
     public partial class MainWindow : Window
     {
-        Engines enginesWindow = new Engines();
-
         public static bool IsWindowOpen<T>(string name = "") where T : Window
         {
             return string.IsNullOrEmpty(name)
@@ -36,10 +34,17 @@ namespace ProjektOOP
 
         private void engineButton_Click(object sender, RoutedEventArgs e)
         {
+            Engines enginesWindow = new Engines();
+
             if (!IsWindowOpen<Engines>())
                 return;
             else
-                enginesWindow.Show();   
+            {
+                enginesWindow.WindowStartupLocation = WindowStartupLocation.Manual;
+                enginesWindow.Left = this.Left + this.Width - 10;
+                enginesWindow.Top = this.Top;
+                enginesWindow.Show();
+            }
         }
     }
 }

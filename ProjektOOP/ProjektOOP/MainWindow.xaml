@@ -10,7 +10,7 @@
         MinHeight="450"
         MinWidth="400"
         Height="450" 
-        Width="600"
+        Width="550"
         Title="Car Creator">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -36,9 +36,9 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="engineButton" Grid.Column="1" MinWidth="90" MaxWidth="130" HorizontalAlignment="Right" Margin="5,2,5,2" Click="engineButton_Click">Saved Engines</Button>
+            <Button Grid.Column="1" MinWidth="90" HorizontalAlignment="Right" Margin="5,2,5,2">Car Makers</Button>
             <Button Grid.Column="2" MinWidth="90" HorizontalAlignment="Right" Margin="5,2,5,2">Saved Chassis</Button>
-            <Button Grid.Column="3" MinWidth="90" HorizontalAlignment="Right" Margin="5,2,5,2">Car Makers</Button>
+            <Button x:Name="engineButton" Grid.Column="3" MinWidth="90" MaxWidth="130" HorizontalAlignment="Right" Margin="5,2,5,2" Click="engineButton_Click">Saved Engines</Button>
         </Grid>
         
         <!-- Row 2 - Inputs, Model, Engine, Chassis -->
