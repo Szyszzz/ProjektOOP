@@ -1,5 +1,5 @@
 ﻿ProjektOOP
-1.0.0.0
+
 
 winexe
 C#
@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\App.xaml
-41851857392
+5-1518998151
 
-171588752384
+18-1521574313
 214-1159489371
-ChassisWindow.xaml;EnginesWindow.xaml;MainWindow.xaml;MakersWindow.xaml;
+ChassisWindow.xaml;EnginesWindow.xaml;MainWindow.xaml;MakersWindow.xaml;NewMakerWindow.xaml;
 
-True
+False
 

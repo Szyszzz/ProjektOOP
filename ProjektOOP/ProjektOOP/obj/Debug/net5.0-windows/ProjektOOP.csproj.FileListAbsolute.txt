@@ -64,3 +64,5 @@ N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\MakersWi
 N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\ChassisWindow.baml
 N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\EnginesWindow.baml
 N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\MakersWindow.baml
+N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\NewMakerWindow.g.cs
+N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\NewMakerWindow.baml

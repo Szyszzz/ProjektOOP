@@ -16,6 +16,9 @@
     <Compile Update="MakersWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="NewMakerWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="ChassisWindow.xaml">
@@ -28,6 +31,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MakersWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="NewMakerWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

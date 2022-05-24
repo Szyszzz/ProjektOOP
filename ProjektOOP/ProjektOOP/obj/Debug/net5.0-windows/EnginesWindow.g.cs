@@ -53,7 +53,7 @@ namespace ProjektOOP {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ProjektOOP;V1.0.0.0;component/engineswindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ProjektOOP;component/engineswindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\EnginesWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

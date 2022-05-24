@@ -42,7 +42,7 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <Button Grid.Row="0" MaxWidth="100" MinWidth="90" Margin="5">Add New</Button>
+            <Button Grid.Row="0" MaxWidth="100" MinWidth="90" Margin="5" Click="NewMaker_Click">Add New</Button>
             <Button Grid.Row="1" MaxWidth="100" MinWidth="90" Margin="5">Edit Maker</Button>
             <Button Grid.Row="2" MaxWidth="100" MinWidth="90" Margin="5">Delete Maker</Button>
         </Grid>

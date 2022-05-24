@@ -15,7 +15,10 @@ namespace ProjektOOP.Model
         public decimal Price { get; set; }
         public string? CarClass { get; set;}
         public int MakerId { get; set; }
+        public CarMakers Maker { get; set; }
         public int ChassisId { get; set; }
+        public Chassis Chassis { get; set; }
         public int EngineId { get; set; }
+        public Engine Engine { get; set; }
     }
 }
