@@ -8,7 +8,7 @@ namespace ProjektOOP.Model
 {
     public class CarMakers
     {
-        public int MakerID { get; set; }
+        public int Id { get; set; }
         public string MakerName { get; set; }
     }
 }

@@ -8,13 +8,13 @@ namespace ProjektOOP.Model
 {
     public class Chassis
     {
-        public int ChassisID { get; set; }
-        public int MakerID { get; set; }
+        public int Id { get; set; }
+        public int MakerId { get; set; }
         public string ChassisName { get; set; }
         public int Weight { get; set; }
         public int Lenght { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
-        public byte Doors { get; set; }
+        public int Doors { get; set; }
     }
 }

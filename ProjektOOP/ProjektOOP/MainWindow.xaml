@@ -158,7 +158,7 @@
                     <GridViewColumn Header="Class" Width="100"/>
                 </GridView>
             </ListView.View>
-        </ListView>
+        </ListView> 
 
         <!-- Signature -->
         <TextBlock Grid.Row="4" Grid.Column="2" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="130,0,0,0">13477 - Projekt OOP</TextBlock>

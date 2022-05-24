@@ -35,7 +35,7 @@
                     <GridViewColumn Header="Weight" Width="100"/>
                 </GridView>
             </ListView.View>
-        </ListView>
+        </ListView> 
 
         <!-- Row 2 - Edit List buttons-->
         <Grid Grid.Row="2" Grid.Column="1">

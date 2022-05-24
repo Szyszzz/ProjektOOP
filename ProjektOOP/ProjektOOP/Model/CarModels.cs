@@ -8,13 +8,14 @@ namespace ProjektOOP.Model
 {
     public class CarModels
     {
-        public int CarID { get; set; }
-        public int MakerID { get; set; }
-        public int ChassisID { get; set; }
-        public int EngineID { get; set; }
+        public int Id { get; set; }
         public string ModelName { get; set; }
         public string Country { get; set; }
         public int ProductionYear { get; set; }
-        public double Price { get; set; }
+        public decimal Price { get; set; }
+        public string? CarClass { get; set;}
+        public int MakerId { get; set; }
+        public int ChassisId { get; set; }
+        public int EngineId { get; set; }
     }
 }

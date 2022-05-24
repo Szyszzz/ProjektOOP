@@ -24,7 +24,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
-
+        
         <ListView Grid.Column="1" Grid.Row="1" Height="auto">
             <ListView.View>
                 <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Chassis list">
