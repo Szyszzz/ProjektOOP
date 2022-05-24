@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\App.xaml
-4-1323112360
+41851857392
 
-141668996533
+171588752384
 214-1159489371
-Chassis.xaml;Engines.xaml;MainWindow.xaml;Makers.xaml;
+ChassisWindow.xaml;EnginesWindow.xaml;MainWindow.xaml;MakersWindow.xaml;
 
-False
+True
 

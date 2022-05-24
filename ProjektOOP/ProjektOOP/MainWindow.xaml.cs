@@ -41,9 +41,9 @@ namespace ProjektOOP
 
         private void EngineButton_Click(object sender, RoutedEventArgs e)
         {
-            Engines enginesWindow = new Engines();
+            EnginesWindow enginesWindow = new EnginesWindow();
 
-            if (!IsWindowOpen<Engines>())
+            if (!IsWindowOpen<EnginesWindow>())
                 return;
             else
                 StartWindowOnTheLeft(enginesWindow);
@@ -51,9 +51,9 @@ namespace ProjektOOP
 
         private void ChassisButton_Click(object sender, RoutedEventArgs e)
         {
-            Chassis chassisWindow = new Chassis();
+            ChassisWindow chassisWindow = new ChassisWindow();
 
-            if (!IsWindowOpen<Chassis>())
+            if (!IsWindowOpen<ChassisWindow>())
                 return;
             else
                 StartWindowOnTheLeft(chassisWindow);
@@ -61,9 +61,9 @@ namespace ProjektOOP
 
         private void MakersButton_Click(object sender, RoutedEventArgs e)
         {
-            Makers makersWindow = new Makers();
+            MakersWindow makersWindow = new MakersWindow();
 
-            if (!IsWindowOpen<Makers>())
+            if (!IsWindowOpen<MakersWindow>())
                 return;
             else
                 StartWindowOnTheLeft(makersWindow);

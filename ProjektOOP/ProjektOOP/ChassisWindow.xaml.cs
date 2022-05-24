@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace ProjektOOP
 {
     /// <summary>
-    /// Logika interakcji dla klasy Engines.xaml
+    /// Logika interakcji dla klasy Chassis.xaml
     /// </summary>
-    public partial class Engines : Window
+    public partial class ChassisWindow : Window
     {
-        public Engines()
+        public ChassisWindow()
         {
             InitializeComponent();
         }

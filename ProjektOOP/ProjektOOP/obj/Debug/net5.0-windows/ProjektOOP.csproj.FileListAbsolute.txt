@@ -58,9 +58,9 @@ N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\ProjektO
 N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\ref\ProjektOOP.dll
 N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\ProjektOOP.pdb
 N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\ProjektOOP.genruntimeconfig.cache
-N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\Engines.g.cs
-N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\Engines.baml
-N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\Chassis.g.cs
-N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\Chassis.baml
-N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\Makers.g.cs
-N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\Makers.baml
+N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\ChassisWindow.g.cs
+N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\EnginesWindow.g.cs
+N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\MakersWindow.g.cs
+N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\ChassisWindow.baml
+N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\EnginesWindow.baml
+N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\MakersWindow.baml

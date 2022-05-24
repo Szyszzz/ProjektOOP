@@ -7,27 +7,27 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Chassis.xaml.cs">
+    <Compile Update="ChassisWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Engines.xaml.cs">
+    <Compile Update="EnginesWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Makers.xaml.cs">
+    <Compile Update="MakersWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Chassis.xaml">
+    <Page Update="ChassisWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Engines.xaml">
+    <Page Update="EnginesWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Makers.xaml">
+    <Page Update="MakersWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

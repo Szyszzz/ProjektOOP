@@ -1,17 +1,17 @@
-﻿<Window x:Class="ProjektOOP.Makers"
+﻿<Window x:Class="ProjektOOP.ChassisWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektOOP"
         mc:Ignorable="d"
-        Title="Makers"
+        Title="Chassis"
         MinHeight="450"
         MaxHeight="600"
         MinWidth="150"
         MaxWidth="350"
         Height="450"
-        Width="200">
+        Width="350">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
@@ -24,15 +24,18 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
-        
+
+        <!-- Row 1 - Chassis List -->
         <ListView Grid.Column="1" Grid.Row="1" Height="auto">
             <ListView.View>
                 <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Chassis list">
                     <GridViewColumn Header="ID" Width="30"/>
                     <GridViewColumn Header="Name" Width="100"/>
+                    <GridViewColumn Header="Doors" Width="100"/>
+                    <GridViewColumn Header="Weight" Width="100"/>
                 </GridView>
             </ListView.View>
-        </ListView>
+        </ListView> 
 
         <!-- Row 2 - Edit List buttons-->
         <Grid Grid.Row="2" Grid.Column="1">
@@ -41,10 +44,11 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
+            <Button Grid.Row="0" MaxWidth="100" MinWidth="90" Margin="5">Load Chassis</Button>
+            <Button Grid.Row="1" MaxWidth="100" MinWidth="90" Margin="5">Update Chassis</Button>
+            <Button Grid.Row="2" MaxWidth="100" MinWidth="90" Margin="5">Delete Chassis</Button>
 
-            <Button Grid.Row="0" MaxWidth="100" MinWidth="90" Margin="5">Add New</Button>
-            <Button Grid.Row="1" MaxWidth="100" MinWidth="90" Margin="5">Edit Maker</Button>
-            <Button Grid.Row="2" MaxWidth="100" MinWidth="90" Margin="5">Delete Maker</Button>
+
         </Grid>
     </Grid>
 </Window>

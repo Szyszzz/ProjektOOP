@@ -16,9 +16,9 @@ namespace ProjektOOP
     /// <summary>
     /// Logika interakcji dla klasy Makers.xaml
     /// </summary>
-    public partial class Makers : Window
+    public partial class MakersWindow : Window
     {
-        public Makers()
+        public MakersWindow()
         {
             InitializeComponent();
         }
