@@ -25,10 +25,9 @@ namespace ProjektOOP
     /// <summary>
     /// Logika interakcji dla klasy Makers.xaml
     /// </summary>
+
     public partial class MakersWindow : Window
     {
-        private readonly ProjektContext context;
-
         public MakersWindow()
         {
             InitializeComponent();
@@ -46,6 +45,22 @@ namespace ProjektOOP
         {
             NewMakerWindow newMaker = new NewMakerWindow();
             StartWindowOnTheLeft(newMaker);
+        }
+    }
+
+    public class ListOfMakers
+    {
+        public static ObservableCollection<CarMakers> MakersList { get; set; } = GetMakers();
+
+        public static ObservableCollection<CarMakers> GetMakers()
+        {
+            ProjektContext context = new ContextFactory().CreateDbContext();
+            return new ObservableCollection<CarMakers>(context.CarMakers);
+        }
+
+        public static void Add(CarMakers maker)
+        {
+            MakersList.Add(maker);
         }
     }
 }

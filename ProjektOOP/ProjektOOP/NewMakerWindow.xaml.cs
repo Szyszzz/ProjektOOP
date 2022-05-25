@@ -34,8 +34,9 @@ namespace ProjektOOP
         {
             CarMakers newMaker = new CarMakers() {MakerName = NewMakerName.Text};
             context.CarMakers.Add(newMaker);
-            NewMakerName.Text = "";
             context.SaveChanges();
+            ListOfMakers.Add(newMaker);
+            NewMakerName.Text = "";
         }
     }
 }
