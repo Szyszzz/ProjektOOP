@@ -28,8 +28,11 @@ namespace ProjektOOP
 
     public partial class MakersWindow : Window
     {
+        private readonly ProjektContext context;
+
         public MakersWindow()
         {
+            context = new ContextFactory().CreateDbContext();
             InitializeComponent();
         }
 
@@ -46,6 +49,14 @@ namespace ProjektOOP
             NewMakerWindow newMaker = new NewMakerWindow();
             StartWindowOnTheLeft(newMaker);
         }
+
+        private void DeleteMaker_Click(object sender, RoutedEventArgs e)
+        {
+            CarMakers makerToRemove = new CarMakers();
+            context.Remove(MakersListView.SelectedItem as CarMakers);
+            ListOfMakers.Remove(MakersListView.SelectedItem as CarMakers);
+            context.SaveChanges();
+        }
     }
 
     public class ListOfMakers
@@ -61,6 +72,11 @@ namespace ProjektOOP
         public static void Add(CarMakers maker)
         {
             MakersList.Add(maker);
+        }
+
+        public static void Remove(CarMakers maker)
+        {
+            MakersList.Remove(maker);
         }
     }
 }
