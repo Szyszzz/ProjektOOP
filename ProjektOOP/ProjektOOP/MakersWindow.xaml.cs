@@ -14,6 +14,7 @@ using ProjektOOP.Context;
 using ProjektOOP.Model;
 using System.Collections;
 using System.Collections.ObjectModel;
+using ProjektOOP.Services;
 
 namespace ProjektOOP
 {
@@ -28,11 +29,10 @@ namespace ProjektOOP
 
     public partial class MakersWindow : Window
     {
-        private readonly ProjektContext context;
+        AddRemoveService AddRemove = new AddRemoveService();
 
         public MakersWindow()
         {
-            context = new ContextFactory().CreateDbContext();
             InitializeComponent();
         }
 
@@ -52,10 +52,8 @@ namespace ProjektOOP
 
         private void DeleteMaker_Click(object sender, RoutedEventArgs e)
         {
-            CarMakers makerToRemove = new CarMakers();
-            context.Remove(MakersListView.SelectedItem as CarMakers);
+            AddRemove.RemoveMaker(MakersListView.SelectedItem as CarMakers);
             ListOfMakers.Remove(MakersListView.SelectedItem as CarMakers);
-            context.SaveChanges();
         }
     }
 

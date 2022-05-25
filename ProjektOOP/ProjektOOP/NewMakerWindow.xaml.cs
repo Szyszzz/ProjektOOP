@@ -12,8 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ProjektOOP.Model;
-using ProjektOOP.Context;
 using System.Collections.ObjectModel;
+using ProjektOOP.Services;
 
 namespace ProjektOOP
 {
@@ -22,19 +22,17 @@ namespace ProjektOOP
     /// </summary>
     public partial class NewMakerWindow : Window
     {
-        private readonly ProjektContext context;
+        AddRemoveService AddRemove = new AddRemoveService();
 
         public NewMakerWindow()
         {
-            context = new ContextFactory().CreateDbContext();
             InitializeComponent();
         }
 
         private void AddNewMakerToDb(object sender, RoutedEventArgs e)
         {
             CarMakers newMaker = new CarMakers() {MakerName = NewMakerName.Text};
-            context.CarMakers.Add(newMaker);
-            context.SaveChanges();
+            AddRemove.AddMaker(newMaker);
             ListOfMakers.Add(newMaker);
             NewMakerName.Text = "";
         }
