@@ -45,10 +45,12 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" MaxWidth="100" MinWidth="90" Margin="5" Click="NewMaker_Click">Add New</Button>
-            <Button Grid.Row="1" MaxWidth="100" MinWidth="90" Margin="5">Edit Maker</Button>
-            <Button Grid.Row="2" MaxWidth="100" MinWidth="90" Margin="5" Click="DeleteMaker_Click">Delete Maker</Button>
+            <TextBox x:Name="MakersWindowInput" Margin="0,5,0,5" Height="20"/>
+            <Button Grid.Row="1" MaxWidth="100" MinWidth="90" Margin="5" Click="NewMaker_Click">Add New</Button>
+            <Button Grid.Row="2" MaxWidth="100" MinWidth="90" Margin="5" Click="EditMaker_Click">Edit Maker</Button>
+            <Button Grid.Row="3" MaxWidth="100" MinWidth="90" Margin="5" Click="DeleteMaker_Click">Delete Maker</Button>
         </Grid>
     </Grid>
 </Window>

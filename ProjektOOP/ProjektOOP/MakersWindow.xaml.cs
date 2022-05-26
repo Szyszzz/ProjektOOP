@@ -30,6 +30,7 @@ namespace ProjektOOP
     public partial class MakersWindow : Window
     {
         AddRemoveService AddRemove = new AddRemoveService();
+        EditService EditTables = new EditService();
 
         public MakersWindow()
         {
@@ -46,14 +47,37 @@ namespace ProjektOOP
 
         private void NewMaker_Click(object sender, RoutedEventArgs e)
         {
-            NewMakerWindow newMaker = new NewMakerWindow();
-            StartWindowOnTheLeft(newMaker);
+            if (!string.IsNullOrEmpty(MakersWindowInput.Text))
+            {
+                CarMakers newMaker = new CarMakers() { MakerName = MakersWindowInput.Text };
+                AddRemove.AddMaker(newMaker);
+                ListOfMakers.Add(newMaker);
+            }
+            else
+            {
+                //ToDo - DialogBox
+                return;
+            }
         }
 
         private void DeleteMaker_Click(object sender, RoutedEventArgs e)
         {
+            //ToDo - DialogBox
             AddRemove.RemoveMaker(MakersListView.SelectedItem as CarMakers);
             ListOfMakers.Remove(MakersListView.SelectedItem as CarMakers);
+        }
+
+        private void EditMaker_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(MakersWindowInput.Text))
+            {
+                EditTables.EditMakers((MakersListView.SelectedItem as CarMakers), MakersWindowInput.Text);
+            }
+            else
+            {
+                //ToDo - DialogBox
+                return;
+            }
         }
     }
 
