@@ -32,7 +32,7 @@
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Header="ID" Width="30" DisplayMemberBinding="{Binding Id}"/>
                         <GridViewColumn Header="Maker Name" Width="150" DisplayMemberBinding="{Binding MakerName}"/>
                     </GridView.Columns>
                 </GridView>

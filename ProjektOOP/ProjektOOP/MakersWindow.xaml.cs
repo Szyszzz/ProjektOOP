@@ -56,23 +56,37 @@ namespace ProjektOOP
             }
             else
             {
-                //ToDo - DialogBox
+                MessageBox.Show("Maker name can't be empty. Please try again with proper name.", "Wrong Name", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
         }
 
         private void DeleteMaker_Click(object sender, RoutedEventArgs e)
         {
-            //ToDo - DialogBox
-            AddRemove.RemoveMaker(MakersListView.SelectedItem as CarMakers);
-            ListOfMakers.Remove(MakersListView.SelectedItem as CarMakers);
+            if (MakersListView.SelectedIndex <= 0)
+            {
+                MessageBox.Show("None of the makers was selected. Please select a maker first before trying to delete it.", "Maker Not Selected", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            string removalText = "Are you sure you want to remove: " 
+                + (MakersListView.SelectedItem as CarMakers).MakerName +
+                " ID: "+ (MakersListView.SelectedItem as CarMakers).Id + Environment.NewLine +
+                "Removal of this car maker will also delete all the car Models, Engines and Chassis made by this maker!";
+
+            if(MessageBox.Show(removalText, "Removal Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning, MessageBoxResult.No) == MessageBoxResult.Yes)
+            {
+                AddRemove.RemoveMaker(MakersListView.SelectedItem as CarMakers);
+                ListOfMakers.Remove(MakersListView.SelectedItem as CarMakers);
+                MakersListView.SelectedIndex = -1;
+            }
         }
 
         private void EditMaker_Click(object sender, RoutedEventArgs e)
         {
             if (MakersListView.SelectedIndex <= 0)
             {
-                MessageBox.Show("None of the makers was selected. Please select a maker first before trying to edit it.", "Maker Not Selected Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("None of the makers was selected. Please select a maker first before trying to edit it.", "Maker Not Selected", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -84,14 +98,17 @@ namespace ProjektOOP
             }
             else
             {
-                MessageBox.Show("Maker name can't be empty. Please try again with proper name.", "Naming Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Maker name can't be empty. Please try again with proper name.", "Wrong Name", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
         }
 
         private void MakersListView_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            MakersWindowInput.Text = (MakersListView.SelectedItem as CarMakers).MakerName;
+            if ((MakersListView.SelectedItem as CarMakers) != null)
+                MakersWindowInput.Text = (MakersListView.SelectedItem as CarMakers).MakerName;
+            else
+                MakersWindowInput.Text = "";
         }
     }
 
