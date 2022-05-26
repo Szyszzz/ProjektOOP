@@ -19,11 +19,9 @@ namespace ProjektOOP.Services
 
         public void EditMakers(CarMakers targetToChange, string newName)
         {
-            using (context)
-            {
-                targetToChange.MakerName = newName;
-                context.SaveChanges();
-            }
+            targetToChange.MakerName = newName;
+            context.CarMakers.Update(targetToChange);
+            context.SaveChanges();
         }
     }
 }

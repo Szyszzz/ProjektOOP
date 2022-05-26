@@ -52,6 +52,7 @@ namespace ProjektOOP
                 CarMakers newMaker = new CarMakers() { MakerName = MakersWindowInput.Text };
                 AddRemove.AddMaker(newMaker);
                 ListOfMakers.Add(newMaker);
+                MakersWindowInput.Text = "";
             }
             else
             {
@@ -69,15 +70,28 @@ namespace ProjektOOP
 
         private void EditMaker_Click(object sender, RoutedEventArgs e)
         {
+            if (MakersListView.SelectedIndex <= 0)
+            {
+                MessageBox.Show("None of the makers was selected. Please select a maker first before trying to edit it.", "Maker Not Selected Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             if (!string.IsNullOrEmpty(MakersWindowInput.Text))
             {
                 EditTables.EditMakers((MakersListView.SelectedItem as CarMakers), MakersWindowInput.Text);
+                ListOfMakers.Edit((MakersListView.SelectedItem as CarMakers), MakersWindowInput.Text);
+                MakersWindowInput.Text = "";
             }
             else
             {
-                //ToDo - DialogBox
+                MessageBox.Show("Maker name can't be empty. Please try again with proper name.", "Naming Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
+        }
+
+        private void MakersListView_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            MakersWindowInput.Text = (MakersListView.SelectedItem as CarMakers).MakerName;
         }
     }
 
@@ -91,14 +105,18 @@ namespace ProjektOOP
             return new ObservableCollection<CarMakers>(context.CarMakers);
         }
 
-        public static void Add(CarMakers maker)
-        {
-            MakersList.Add(maker);
-        }
+        public static void Add(CarMakers maker) => MakersList.Add(maker);
 
-        public static void Remove(CarMakers maker)
+        public static void Remove(CarMakers maker) => MakersList.Remove(maker);
+
+        public static void Edit(CarMakers maker, string newMakerName)
         {
-            MakersList.Remove(maker);
+            CarMakers listMaker = MakersList.FirstOrDefault(i => i == maker);
+            if (listMaker != null)
+            {
+                listMaker.MakerName = newMakerName;
+            }
+            CollectionViewSource.GetDefaultView(MakersList).Refresh();
         }
     }
 }

@@ -28,7 +28,7 @@
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <ListView x:Name="MakersListView" Grid.Column="1" Grid.Row="1" Height="auto" ItemsSource="{Binding MakersList}" SelectionMode="Single">
+        <ListView x:Name="MakersListView" Grid.Column="1" Grid.Row="1" Height="auto" ItemsSource="{Binding MakersList}" SelectionMode="Single" SelectionChanged="MakersListView_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
