@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProjektOOP"
+        xmlns:local="clr-namespace:ProjektOOP.ObservableCollections"
         mc:Ignorable="d"
         Title="Chassis"
         MinHeight="450"
@@ -12,6 +12,9 @@
         MaxWidth="350"
         Height="450"
         Width="350">
+    <Window.DataContext>
+        <local:ListOfChassis/>
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
@@ -26,13 +29,18 @@
         </Grid.RowDefinitions>
 
         <!-- Row 1 - Chassis List -->
-        <ListView Grid.Column="1" Grid.Row="1" Height="auto">
+        <ListView Grid.Column="1" Grid.Row="1" Height="auto" ItemsSource="{Binding ChassisList}">
             <ListView.View>
-                <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Chassis list">
-                    <GridViewColumn Header="ID" Width="30"/>
-                    <GridViewColumn Header="Name" Width="100"/>
-                    <GridViewColumn Header="Doors" Width="100"/>
-                    <GridViewColumn Header="Weight" Width="100"/>
+                <GridView ColumnHeaderToolTip="Chassis list">
+                    <GridView.Columns>
+                        <GridViewColumn Header="ID" Width="30" DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Header="Name" Width="100" DisplayMemberBinding="{Binding Name}"/>
+                        <GridViewColumn Header="Doors" Width="100" DisplayMemberBinding="{Binding Doors}"/>
+                        <GridViewColumn Header="Weight" Width="100" DisplayMemberBinding="{Binding Weight}"/>
+                        <GridViewColumn Header="Length" Width="100" DisplayMemberBinding="{Binding Lenght}"/>
+                        <GridViewColumn Header="Width" Width="100" DisplayMemberBinding="{Binding Width}"/>
+                        <GridViewColumn Header="Height" Width="100" DisplayMemberBinding="{Binding Height}"/>
+                    </GridView.Columns>
                 </GridView>
             </ListView.View>
         </ListView> 

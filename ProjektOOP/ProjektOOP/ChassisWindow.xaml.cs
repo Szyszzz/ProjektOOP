@@ -18,6 +18,8 @@ namespace ProjektOOP
     /// </summary>
     public partial class ChassisWindow : Window
     {
+        public MainWindow ParentWindow;
+
         public ChassisWindow()
         {
             InitializeComponent();

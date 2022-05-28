@@ -1,4 +1,3 @@
-N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\ProjektOOP.csprojAssemblyReference.cache
 N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\MainWindow.g.cs
 N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\App.g.cs
 N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\ProjektOOP_MarkupCompile.cache
@@ -8,7 +7,6 @@ N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\bin\Debug\net5.0-windows\ProjektO
 N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\bin\Debug\net5.0-windows\ProjektOOP.runtimeconfig.json
 N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\bin\Debug\net5.0-windows\ProjektOOP.runtimeconfig.dev.json
 N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\bin\Debug\net5.0-windows\ProjektOOP.dll
-N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\bin\Debug\net5.0-windows\ref\ProjektOOP.dll
 N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\bin\Debug\net5.0-windows\ProjektOOP.pdb
 N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\bin\Debug\net5.0-windows\Humanizer.dll
 N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\bin\Debug\net5.0-windows\Microsoft.Data.SqlClient.dll
@@ -65,3 +63,5 @@ N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\ChassisW
 N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\EnginesWindow.baml
 N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\MakersWindow.baml
 N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs
+N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\ProjektOOP.csproj.AssemblyReference.cache
+N:\GithubRepo\ProjektOOP\ProjektOOP\ProjektOOP\obj\Debug\net5.0-windows\refint\ProjektOOP.dll

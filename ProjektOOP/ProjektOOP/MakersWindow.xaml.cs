@@ -15,6 +15,7 @@ using ProjektOOP.Model;
 using System.Collections;
 using System.Collections.ObjectModel;
 using ProjektOOP.Services;
+using ProjektOOP.ObservableCollections;
 
 namespace ProjektOOP
 {
@@ -109,31 +110,6 @@ namespace ProjektOOP
                 MakersWindowInput.Text = (MakersListView.SelectedItem as CarMakers).MakerName;
             else
                 MakersWindowInput.Text = "";
-        }
-    }
-
-    public class ListOfMakers
-    {
-        public static ObservableCollection<CarMakers> MakersList { get; set; } = GetMakers();
-
-        public static ObservableCollection<CarMakers> GetMakers()
-        {
-            ProjektContext context = new ContextFactory().CreateDbContext();
-            return new ObservableCollection<CarMakers>(context.CarMakers);
-        }
-
-        public static void Add(CarMakers maker) => MakersList.Add(maker);
-
-        public static void Remove(CarMakers maker) => MakersList.Remove(maker);
-
-        public static void Edit(CarMakers maker, string newMakerName)
-        {
-            CarMakers listMaker = MakersList.FirstOrDefault(i => i == maker);
-            if (listMaker != null)
-            {
-                listMaker.MakerName = newMakerName;
-            }
-            CollectionViewSource.GetDefaultView(MakersList).Refresh();
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -14,6 +15,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
+using ProjektOOP.Services;
+using ProjektOOP.ObservableCollections;
 
 namespace ProjektOOP
 {
@@ -22,6 +26,8 @@ namespace ProjektOOP
     /// </summary>
     public partial class MainWindow : Window
     {
+        AddRemoveService AddRemove = new AddRemoveService();
+
         public static bool IsWindowOpen<T>(string name = "") where T : Window
         {
             return string.IsNullOrEmpty(name)
@@ -59,7 +65,10 @@ namespace ProjektOOP
             if (!IsWindowOpen<ChassisWindow>())
                 return;
             else
+            {
+                chassisWindow.ParentWindow = this;
                 StartWindowOnTheLeft(chassisWindow);
+            }
         }
 
         private void MakersButton_Click(object sender, RoutedEventArgs e)
@@ -72,5 +81,29 @@ namespace ProjektOOP
                 StartWindowOnTheLeft(makersWindow);
         }
 
+        public Chassis BuildCurrentChassis()
+        {
+            Chassis newChassis = new Chassis();
+            newChassis.ChassisName = C_Name.Text;
+            newChassis.Weight = int.Parse(C_Weight.Text);
+            newChassis.Lenght = int.Parse(C_Lenght.Text);
+            newChassis.Width = int.Parse(C_Width.Text);
+            newChassis.Height = int.Parse(C_Height.Text);
+            newChassis.Doors = int.Parse(C_Doors.Text);
+            return newChassis;
+        }
+
+        private void PreviewTextInput_Numeric(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void NewChassis_Click(object sender, RoutedEventArgs e)
+        {
+            Chassis chassis = BuildCurrentChassis();
+            AddRemove.AddChassis(chassis);
+            ListOfChassis.Add(chassis);
+        }
     }
 }
