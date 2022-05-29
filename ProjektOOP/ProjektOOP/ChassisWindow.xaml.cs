@@ -78,5 +78,19 @@ namespace ProjektOOP
             editChassis.EditChassis((ChassisListView.SelectedItem as Chassis), newChassis);
 
         }
+
+        private void DeleteChassis_Click(object sender, RoutedEventArgs e)
+        {
+            if(ChassisListView.SelectedIndex <= 0)
+            {
+                //ToDo - dialog
+                return;
+            }
+
+            //ToDo - dialog
+            addRemove.RemoveChassis((ChassisListView.SelectedItem as Chassis));
+            ListOfChassis.Remove((ChassisListView.SelectedItem as Chassis));
+            ChassisListView.SelectedIndex = -1;
+        }
     }
 }

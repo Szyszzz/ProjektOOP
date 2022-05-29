@@ -54,7 +54,7 @@
             </Grid.RowDefinitions>
             <Button Grid.Row="0" MaxWidth="100" MinWidth="90" Margin="5" Click="LoadChassis_Click" >Load Chassis</Button>
             <Button Grid.Row="1" MaxWidth="100" MinWidth="90" Margin="5" Click="UpdateChassis_Click">Update Chassis</Button>
-            <Button Grid.Row="2" MaxWidth="100" MinWidth="90" Margin="5">Delete Chassis</Button>
+            <Button Grid.Row="2" MaxWidth="100" MinWidth="90" Margin="5" Click="DeleteChassis_Click">Delete Chassis</Button>
         </Grid>
     </Grid>
 </Window>
