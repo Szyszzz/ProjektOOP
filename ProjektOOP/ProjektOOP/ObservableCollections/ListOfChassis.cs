@@ -29,23 +29,12 @@ namespace ProjektOOP.ObservableCollections
             Chassis listChassis = ChassisList.FirstOrDefault(i => i == chassis);
             if (listChassis != null)
             {
-                if (listChassis.ChassisName != null)
-                    listChassis.ChassisName = newChassis.ChassisName;
-
-                if (listChassis.Weight < 0)
-                    listChassis.Weight = newChassis.Weight;
-
-                if (listChassis.Lenght < 0)
-                    listChassis.Lenght = newChassis.Lenght;
-
-                if (listChassis.Width < 0)
-                    listChassis.Width = newChassis.Width;
-
-                if (listChassis.Height < 0)
-                    listChassis.Height = newChassis.Height;
-
-                if (listChassis.Doors < 0)
-                    listChassis.Doors = newChassis.Doors;
+                listChassis.ChassisName = newChassis.ChassisName;
+                listChassis.Weight = newChassis.Weight;
+                listChassis.Lenght = newChassis.Lenght;
+                listChassis.Width = newChassis.Width;
+                listChassis.Height = newChassis.Height;
+                listChassis.Doors = newChassis.Doors;
             }
             CollectionViewSource.GetDefaultView(ChassisList).Refresh();
         }

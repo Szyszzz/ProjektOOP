@@ -26,7 +26,7 @@ namespace ProjektOOP
     /// </summary>
     public partial class MainWindow : Window
     {
-        AddRemoveService AddRemove = new AddRemoveService();
+       AddRemoveService AddRemove = new AddRemoveService();
 
         public static bool IsWindowOpen<T>(string name = "") where T : Window
         {
@@ -84,12 +84,57 @@ namespace ProjektOOP
         public Chassis BuildCurrentChassis()
         {
             Chassis newChassis = new Chassis();
-            newChassis.ChassisName = C_Name.Text;
-            newChassis.Weight = int.Parse(C_Weight.Text);
-            newChassis.Lenght = int.Parse(C_Lenght.Text);
-            newChassis.Width = int.Parse(C_Width.Text);
-            newChassis.Height = int.Parse(C_Height.Text);
-            newChassis.Doors = int.Parse(C_Doors.Text);
+
+            if (String.IsNullOrEmpty(C_Name.Text))
+                newChassis.ChassisName = "NewChassis";
+            else
+                newChassis.ChassisName = C_Name.Text;
+
+            try
+            {
+                newChassis.Weight = int.Parse(C_Weight.Text);
+            }
+            catch(FormatException)
+            {
+                newChassis.Weight = 1000;
+            }
+
+            try
+            {
+                newChassis.Lenght = int.Parse(C_Lenght.Text);
+            }
+            catch(FormatException)
+            {
+                newChassis.Lenght = 3000;
+            }
+
+            try
+            {
+                newChassis.Width = int.Parse(C_Width.Text);
+            }
+            catch (FormatException)
+            {
+                newChassis.Width = 1200;
+            }
+
+            try
+            {
+                newChassis.Height = int.Parse(C_Height.Text);
+            }
+            catch (FormatException)
+            {
+                newChassis.Height = 1500;
+            }
+
+            try
+            {
+                newChassis.Doors = int.Parse(C_Doors.Text);
+            }
+            catch (FormatException)
+            {
+                newChassis.Doors = 2;
+            }
+
             return newChassis;
         }
 

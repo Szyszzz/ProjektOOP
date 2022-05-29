@@ -23,5 +23,17 @@ namespace ProjektOOP.Services
             context.CarMakers.Update(targetToChange);
             context.SaveChanges();
         }
+
+        public void EditChassis(Chassis targetToChange, Chassis newChassis)
+        {
+            targetToChange.ChassisName = newChassis.ChassisName;
+            targetToChange.Width = newChassis.Width;
+            targetToChange.Lenght = newChassis.Lenght;
+            targetToChange.Height = newChassis.Height;
+            targetToChange.Weight = newChassis.Weight;
+            targetToChange.Doors = newChassis.Doors;
+            context.Chassis.Update(targetToChange);
+            context.SaveChanges();
+        }
     }
 }
