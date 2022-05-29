@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjektOOP.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,11 @@ namespace ProjektOOP
         public ChassisWindow()
         {
             InitializeComponent();
+        }
+
+        private void LoadChassis_Click(object sender, RoutedEventArgs e)
+        {
+            ParentWindow.LoadChassis((ChassisListView.SelectedItem as Chassis));
         }
     }
 }

@@ -105,5 +105,15 @@ namespace ProjektOOP
             AddRemove.AddChassis(chassis);
             ListOfChassis.Add(chassis);
         }
+
+        public void LoadChassis(Chassis chassis)
+        {
+            C_Name.Text = chassis.ChassisName;
+            C_Weight.Text = chassis.Weight.ToString();
+            C_Lenght.Text = chassis.Lenght.ToString();
+            C_Height.Text = chassis.Height.ToString();
+            C_Width.Text = chassis.Width.ToString();
+            C_Doors.Text = chassis.Doors.ToString();
+        }
     }
 }

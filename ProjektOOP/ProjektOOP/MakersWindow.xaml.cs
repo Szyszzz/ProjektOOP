@@ -38,14 +38,6 @@ namespace ProjektOOP
             InitializeComponent();
         }
 
-        public void StartWindowOnTheLeft(Window win)
-        {
-            win.WindowStartupLocation = WindowStartupLocation.Manual;
-            win.Left = this.Left + this.Width - 10;
-            win.Top = this.Top + this.Height - win.Height;
-            win.Show();
-        }
-
         private void NewMaker_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(MakersWindowInput.Text))

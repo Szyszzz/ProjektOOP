@@ -120,9 +120,6 @@
             <TextBlock Grid.Row="8" PreviewTextInput="PreviewTextInput_Numeric" Grid.Column="3">Doors:</TextBlock>
             <TextBox x:Name="C_Doors" Grid.Row="9" Grid.Column="3" Margin="5,2,5,2"></TextBox>
 
-            <TextBlock Grid.Row="8" PreviewTextInput="PreviewTextInput_Numeric" Grid.Column="4">Maker ID:</TextBlock>
-            <TextBox x:Name="C_MakerID" Grid.Row="9" Grid.Column="4" Margin="5,2,5,2"></TextBox>
-
             <!-- Collumn 7,8 - Engine Settings Text -->
             <TextBlock Grid.Row="0" Grid.Column="6" FontWeight="Bold">Engine:</TextBlock>
             <Button Grid.Row="0" Grid.Column="7" Margin="5,0,5,0" ToolTip="Save new engine">Save</Button>
