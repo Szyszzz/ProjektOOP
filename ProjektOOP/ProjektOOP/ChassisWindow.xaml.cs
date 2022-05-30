@@ -33,6 +33,12 @@ namespace ProjektOOP
 
         private void LoadChassis_Click(object sender, RoutedEventArgs e)
         {
+            if(ChassisListView.SelectedIndex <= -1)
+            {
+                //ToDo - dialog
+                return;
+            }
+
             ParentWindow.LoadChassis((ChassisListView.SelectedItem as Chassis));
         }
 
@@ -73,6 +79,12 @@ namespace ProjektOOP
 
         private void UpdateChassis_Click(object sender, RoutedEventArgs e)
         {
+            if(ChassisListView.SelectedIndex <= -1)
+            {
+                //ToDo - dialog
+                return;
+            }
+
             Chassis newChassis = UpdateNotEmptyProperties(ParentWindow.BuildCurrentChassis());
             ListOfChassis.Edit((ChassisListView.SelectedItem as Chassis), newChassis);
             editChassis.EditChassis((ChassisListView.SelectedItem as Chassis), newChassis);
@@ -81,7 +93,7 @@ namespace ProjektOOP
 
         private void DeleteChassis_Click(object sender, RoutedEventArgs e)
         {
-            if(ChassisListView.SelectedIndex <= 0)
+            if(ChassisListView.SelectedIndex <=-1)
             {
                 //ToDo - dialog
                 return;

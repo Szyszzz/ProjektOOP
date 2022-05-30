@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProjektOOP"
+        xmlns:local="clr-namespace:ProjektOOP.ObservableCollections"
         mc:Ignorable="d"
         Title="Engines"
         MinHeight="450"
@@ -12,6 +12,9 @@
         MaxWidth="350"
         Height="450"
         Width="350">
+    <Window.DataContext>
+        <local:ListOfEngines/>
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>

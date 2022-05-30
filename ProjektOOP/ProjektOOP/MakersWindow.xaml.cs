@@ -56,7 +56,7 @@ namespace ProjektOOP
 
         private void DeleteMaker_Click(object sender, RoutedEventArgs e)
         {
-            if (MakersListView.SelectedIndex <= 0)
+            if (MakersListView.SelectedIndex <= -1)
             {
                 MessageBox.Show("None of the makers was selected. Please select a maker first before trying to delete it.", "Maker Not Selected", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -77,7 +77,7 @@ namespace ProjektOOP
 
         private void EditMaker_Click(object sender, RoutedEventArgs e)
         {
-            if (MakersListView.SelectedIndex <= 0)
+            if (MakersListView.SelectedIndex <= -1)
             {
                 MessageBox.Show("None of the makers was selected. Please select a maker first before trying to edit it.", "Maker Not Selected", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
