@@ -21,6 +21,8 @@ namespace ProjektOOP
     /// </summary>
     public partial class EnginesWindow : Window
     {
+        public MainWindow ParentWindow;
+
         private AddRemoveService addRemove = new AddRemoveService();
         private EditService editChassis = new EditService();
 
@@ -28,6 +30,8 @@ namespace ProjektOOP
         {
             InitializeComponent();
         }
+
+        
 
         private void DeleteEngine_Click(object sender, RoutedEventArgs e)
         {
@@ -42,6 +46,17 @@ namespace ProjektOOP
             addRemove.RemoveEngine((EngineListView.SelectedItem as Engine));
             ListOfEngines.Remove((EngineListView.SelectedItem as Engine));
             EngineListView.SelectedIndex = -1;
+        }
+
+        private void LoadEngine_Click(object sender, RoutedEventArgs e)
+        {
+            if (EngineListView.SelectedIndex <= -1)
+            {
+                //ToDo Dialog
+                return;
+            }
+
+            ParentWindow.LoadEngine((EngineListView.SelectedItem as Engine));
         }
     }
 }

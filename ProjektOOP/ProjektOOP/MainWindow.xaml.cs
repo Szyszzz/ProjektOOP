@@ -55,7 +55,10 @@ namespace ProjektOOP
             if (!IsWindowOpen<EnginesWindow>())
                 return;
             else
+            {
+                enginesWindow.ParentWindow = this;
                 StartWindowOnTheLeft(enginesWindow);
+            }
         }
 
         private void ChassisButton_Click(object sender, RoutedEventArgs e)
@@ -208,21 +211,32 @@ namespace ProjektOOP
             ListOfChassis.Add(chassis);
         }
 
-        public void LoadChassis(Chassis chassis)
-        {
-            C_Name.Text = chassis.ChassisName;
-            C_Weight.Text = chassis.Weight.ToString();
-            C_Lenght.Text = chassis.Lenght.ToString();
-            C_Height.Text = chassis.Height.ToString();
-            C_Width.Text = chassis.Width.ToString();
-            C_Doors.Text = chassis.Doors.ToString();
-        }
-
         private void NewEngine_Click(object sender, RoutedEventArgs e)
         {
             Engine engine = BuildCurrentEngine();
             AddRemove.AddEngine(engine);
             ListOfEngines.Add(engine);
         }
+
+        public void LoadChassis(Chassis c)
+        {
+            C_Name.Text = c.ChassisName;
+            C_Weight.Text = c.Weight.ToString();
+            C_Lenght.Text = c.Lenght.ToString();
+            C_Height.Text = c.Height.ToString();
+            C_Width.Text = c.Width.ToString();
+            C_Doors.Text = c.Doors.ToString();
+        }
+
+        public void LoadEngine(Engine e)
+        {
+            E_Name.Text = e.EngineName;
+            E_Cyli.Text = e.Cylinders.ToString();
+            E_Disp.Text = e.Displacement.ToString();
+            E_IdleRPM.Text = e.IdleRPM.ToString();
+            E_MaxRPM.Text = e.MaxRPM.ToString();
+            E_PeakTo.Text = e.PeakTorque.ToString();
+        }
+
     }
 }
