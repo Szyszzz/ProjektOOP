@@ -81,61 +81,118 @@ namespace ProjektOOP
                 StartWindowOnTheLeft(makersWindow);
         }
 
+        public Engine BuildCurrentEngine()
+        {
+            Engine e = new Engine();
+
+            if (String.IsNullOrEmpty(E_Name.Text))
+                e.EngineName = "NewEngine";
+            else
+                e.EngineName = E_Name.Text;
+
+            try
+            {
+                e.Displacement = int.Parse(E_Disp.Text);
+            }
+            catch(FormatException)
+            {
+                e.Displacement = 1492;
+            }
+
+            try
+            {
+                e.Cylinders = int.Parse(E_Cyli.Text);
+            }
+            catch (FormatException)
+            {
+                e.Cylinders = 4;
+            }
+
+            try
+            {
+                e.PeakTorque = int.Parse(E_PeakTo.Text);
+            }
+            catch (FormatException)
+            {
+                e.PeakTorque = 130;
+            }
+
+            try
+            {
+                e.MaxRPM = int.Parse(E_MaxRPM.Text);
+            }
+            catch (FormatException)
+            {
+                e.MaxRPM = 7200;
+            }
+
+            try
+            {
+                e.IdleRPM = int.Parse(E_IdleRPM.Text);
+            }
+            catch (FormatException)
+            {
+                e.IdleRPM = 700;
+            }
+
+            return e;
+        }
+
         public Chassis BuildCurrentChassis()
         {
-            Chassis newChassis = new Chassis();
+            Chassis c = new Chassis();
 
             if (String.IsNullOrEmpty(C_Name.Text))
-                newChassis.ChassisName = "NewChassis";
+                c.ChassisName = "NewChassis";
             else
-                newChassis.ChassisName = C_Name.Text;
+                c.ChassisName = C_Name.Text;
 
             try
             {
-                newChassis.Weight = int.Parse(C_Weight.Text);
+                c.Weight = int.Parse(C_Weight.Text);
             }
             catch(FormatException)
             {
-                newChassis.Weight = 1000;
+                c.Weight = 1000;
             }
 
             try
             {
-                newChassis.Lenght = int.Parse(C_Lenght.Text);
+                c.Lenght = int.Parse(C_Lenght.Text);
             }
             catch(FormatException)
             {
-                newChassis.Lenght = 3000;
+                c.Lenght = 3000;
             }
 
             try
             {
-                newChassis.Width = int.Parse(C_Width.Text);
+                c.Width = int.Parse(C_Width.Text);
             }
             catch (FormatException)
             {
-                newChassis.Width = 1200;
+                c.Width = 1200;
             }
 
             try
             {
-                newChassis.Height = int.Parse(C_Height.Text);
+                c.Height = int.Parse(C_Height.Text);
             }
             catch (FormatException)
             {
-                newChassis.Height = 1500;
+                c.Height = 1500;
             }
 
             try
             {
-                newChassis.Doors = int.Parse(C_Doors.Text);
+                c.Doors = int.Parse(C_Doors.Text);
             }
             catch (FormatException)
             {
-                newChassis.Doors = 2;
+                c.Doors = 2;
             }
 
-            return newChassis;
+            return c;
         }
 
         private void PreviewTextInput_Numeric(object sender, TextCompositionEventArgs e)
@@ -159,6 +216,13 @@ namespace ProjektOOP
             C_Height.Text = chassis.Height.ToString();
             C_Width.Text = chassis.Width.ToString();
             C_Doors.Text = chassis.Doors.ToString();
+        }
+
+        private void NewEngine_Click(object sender, RoutedEventArgs e)
+        {
+            Engine engine = BuildCurrentEngine();
+            AddRemove.AddEngine(engine);
+            ListOfEngines.Add(engine);
         }
     }
 }

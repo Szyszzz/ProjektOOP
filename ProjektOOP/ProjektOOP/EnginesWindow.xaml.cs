@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ProjektOOP.Model;
+using ProjektOOP.ObservableCollections;
+using ProjektOOP.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,9 +21,27 @@ namespace ProjektOOP
     /// </summary>
     public partial class EnginesWindow : Window
     {
+        private AddRemoveService addRemove = new AddRemoveService();
+        private EditService editChassis = new EditService();
+
         public EnginesWindow()
         {
             InitializeComponent();
+        }
+
+        private void DeleteEngine_Click(object sender, RoutedEventArgs e)
+        {
+            if(EngineListView.SelectedIndex <= -1)
+            {
+                //ToDo Dialog
+                return;
+            }
+
+            //ToDo - Dialog
+
+            addRemove.RemoveEngine((EngineListView.SelectedItem as Engine));
+            ListOfEngines.Remove((EngineListView.SelectedItem as Engine));
+            EngineListView.SelectedIndex = -1;
         }
     }
 }

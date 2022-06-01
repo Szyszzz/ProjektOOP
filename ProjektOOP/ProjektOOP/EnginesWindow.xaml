@@ -29,13 +29,16 @@
         </Grid.RowDefinitions>
         
         <!-- Row 1 - Engines List -->
-        <ListView Grid.Column="1" Grid.Row="1" Height="auto">
+        <ListView x:Name="EngineListView" Grid.Column="1" Grid.Row="1" Height="auto" ItemsSource="{Binding EngineList}">
             <ListView.View>
                 <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Engines list">
-                    <GridViewColumn Header="ID" Width="30"/>
-                    <GridViewColumn Header="Name" Width="100"/>
-                    <GridViewColumn Header="Displacement" Width="100"/>
-                    <GridViewColumn Header="Cylinders" Width="100"/>
+                    <GridView.Columns>
+                        <GridViewColumn Header="ID" Width="30" DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Header="Name" Width="60" DisplayMemberBinding="{Binding EngineName}"/>
+                        <GridViewColumn Header="Displacement" Width="90" DisplayMemberBinding="{Binding Displacement}"/>
+                        <GridViewColumn Header="Cylinders" Width="60" DisplayMemberBinding="{Binding Cylinders}"/>
+                        <GridViewColumn Header="Peak Torque" Width="90" DisplayMemberBinding="{Binding PeakTorque}"/>
+                    </GridView.Columns>
                 </GridView>
             </ListView.View>
         </ListView> 
@@ -49,7 +52,7 @@
             </Grid.RowDefinitions>
             <Button Grid.Row="0" MaxWidth="100" MinWidth="90" Margin="5">Load Engine</Button>
             <Button Grid.Row="1" MaxWidth="100" MinWidth="90" Margin="5">Update Engine</Button>
-            <Button Grid.Row="2" MaxWidth="100" MinWidth="90" Margin="5">Delete Engine</Button>
+            <Button Grid.Row="2" MaxWidth="100" MinWidth="90" Margin="5" Click="DeleteEngine_Click">Delete Engine</Button>
             
 
         </Grid>
