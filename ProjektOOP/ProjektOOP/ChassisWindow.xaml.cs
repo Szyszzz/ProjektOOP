@@ -50,29 +50,23 @@ namespace ProjektOOP
             Chassis valid = (ChassisListView.SelectedItem as Chassis);
                 
             if (!string.IsNullOrEmpty(ParentWindow.C_Name.Text))
-            {
                 valid.ChassisName = c.ChassisName;
-            }
+            
             if (!string.IsNullOrEmpty(ParentWindow.C_Weight.Text))
-            {
                 valid.Weight = c.Weight;
-            }
+            
             if (!string.IsNullOrEmpty(ParentWindow.C_Width.Text))
-            {
                 valid.Width = c.Width;
-            }
+            
             if (!string.IsNullOrEmpty(ParentWindow.C_Lenght.Text))
-            {
                 valid.Lenght = c.Lenght;
-            }
+            
             if (!string.IsNullOrEmpty(ParentWindow.C_Height.Text))
-            {
                 valid.Height = c.Height;
-            }
+            
             if (!string.IsNullOrEmpty(ParentWindow.C_Doors.Text))
-            {
                 valid.Doors = c.Doors;
-            }
+            
 
             return valid;
         }

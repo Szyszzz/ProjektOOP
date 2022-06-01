@@ -35,5 +35,17 @@ namespace ProjektOOP.Services
             context.Chassis.Update(targetToChange);
             context.SaveChanges();
         }
+
+        public void EditEngine(Engine targetToChange, Engine newEngine)
+        {
+            targetToChange.EngineName = newEngine.EngineName;
+            targetToChange.Displacement = newEngine.Displacement;
+            targetToChange.Cylinders = newEngine.Cylinders;
+            targetToChange.MaxRPM = newEngine.MaxRPM;
+            targetToChange.IdleRPM = newEngine.IdleRPM;
+            targetToChange.PeakTorque = newEngine.PeakTorque;
+            context.Engine.Update(targetToChange);
+            context.SaveChanges();
+        }
     }
 }

@@ -24,14 +24,42 @@ namespace ProjektOOP
         public MainWindow ParentWindow;
 
         private AddRemoveService addRemove = new AddRemoveService();
-        private EditService editChassis = new EditService();
+        private EditService editEngine = new EditService();
 
         public EnginesWindow()
         {
             InitializeComponent();
         }
 
-        
+        private Engine UpdateNotEmptyProperties(Engine e)
+        {
+            if((EngineListView.SelectedItem as Engine) == null)
+            {
+                return null;
+            }
+
+            Engine valid = (EngineListView.SelectedItem as Engine);
+
+            if (!string.IsNullOrEmpty(ParentWindow.E_Name.Text))
+                valid.EngineName = e.EngineName;
+
+            if (!string.IsNullOrEmpty(ParentWindow.E_Disp.Text))
+                valid.Displacement = e.Displacement;
+
+            if (!string.IsNullOrEmpty(ParentWindow.E_Cyli.Text))
+                valid.Cylinders = e.Cylinders;
+
+            if (!string.IsNullOrEmpty(ParentWindow.E_PeakTo.Text))
+                valid.PeakTorque = e.PeakTorque;
+
+            if (!string.IsNullOrEmpty(ParentWindow.E_MaxRPM.Text))
+                valid.MaxRPM = e.MaxRPM;
+
+            if (!string.IsNullOrEmpty(ParentWindow.E_IdleRPM.Text))
+                valid.IdleRPM = e.MaxRPM;
+
+            return valid;
+        }
 
         private void DeleteEngine_Click(object sender, RoutedEventArgs e)
         {
@@ -57,6 +85,19 @@ namespace ProjektOOP
             }
 
             ParentWindow.LoadEngine((EngineListView.SelectedItem as Engine));
+        }
+
+        private void UpdateEngine_Click(object sender, RoutedEventArgs e)
+        {
+            if(EngineListView.SelectedIndex <= -1)
+            {
+                //ToDo dialog
+                return;
+            }
+
+            Engine newEngine = UpdateNotEmptyProperties(ParentWindow.BuildCurrentEngine());
+            ListOfEngines.Edit((EngineListView.SelectedItem as Engine), newEngine);
+            editEngine.EditEngine((EngineListView.SelectedItem as Engine), newEngine);
         }
     }
 }
