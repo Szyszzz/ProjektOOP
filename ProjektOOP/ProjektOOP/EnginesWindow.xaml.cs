@@ -85,6 +85,7 @@ namespace ProjektOOP
             }
 
             ParentWindow.LoadEngine((EngineListView.SelectedItem as Engine));
+            ParentWindow.UpdateTargetEngine(EngineListView.SelectedItem as Engine);
         }
 
         private void UpdateEngine_Click(object sender, RoutedEventArgs e)

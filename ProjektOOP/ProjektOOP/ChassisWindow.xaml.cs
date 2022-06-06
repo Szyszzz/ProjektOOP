@@ -40,6 +40,7 @@ namespace ProjektOOP
             }
 
             ParentWindow.LoadChassis((ChassisListView.SelectedItem as Chassis));
+            ParentWindow.UpdateTargetChassis(ChassisListView.SelectedItem as Chassis);
         }
 
         private Chassis UpdateNotEmptyProperties(Chassis c)

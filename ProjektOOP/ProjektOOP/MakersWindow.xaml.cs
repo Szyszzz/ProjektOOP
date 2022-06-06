@@ -30,8 +30,11 @@ namespace ProjektOOP
 
     public partial class MakersWindow : Window
     {
+        public MainWindow ParentWindow;
+
         AddRemoveService AddRemove = new AddRemoveService();
         EditService EditTables = new EditService();
+
 
         public MakersWindow()
         {
@@ -99,9 +102,13 @@ namespace ProjektOOP
         private void MakersListView_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             if ((MakersListView.SelectedItem as CarMakers) != null)
+            {
                 MakersWindowInput.Text = (MakersListView.SelectedItem as CarMakers).MakerName;
+                ParentWindow.UpdateTargetMaker(MakersListView.SelectedItem as CarMakers);
+            }
             else
                 MakersWindowInput.Text = "";
+
         }
     }
 }

@@ -26,7 +26,38 @@ namespace ProjektOOP
     /// </summary>
     public partial class MainWindow : Window
     {
-       AddRemoveService AddRemove = new AddRemoveService();
+        AddRemoveService AddRemove = new AddRemoveService();
+
+        private CarMakers TargetMaker = null;
+        private Engine TargetEngine = null;
+        private Chassis TargetChassis = null;
+        
+        public void UpdateTargetMaker(CarMakers m)
+        {
+            if (ReferenceEquals(m, null))
+                return;
+
+            M_Maker.Text = m.MakerName;
+            TargetMaker = m;
+        }
+
+        public void UpdateTargetEngine(Engine e)
+        {
+            if (ReferenceEquals(e, null))
+                return;
+
+            M_Engine.Text = e.EngineName;
+            TargetEngine = e;
+        }
+
+        public void UpdateTargetChassis(Chassis c)
+        {
+            if (ReferenceEquals(c, null))
+                return;
+
+            M_Chassis.Text = c.ChassisName;
+            TargetChassis = c;
+        }
 
         public static bool IsWindowOpen<T>(string name = "") where T : Window
         {
@@ -81,9 +112,12 @@ namespace ProjektOOP
             if (!IsWindowOpen<MakersWindow>())
                 return;
             else
+            {
+                makersWindow.ParentWindow = this;
                 StartWindowOnTheLeft(makersWindow);
+            }
         }
-
+        
         public Engine BuildCurrentEngine()
         {
             Engine e = new Engine();
@@ -238,5 +272,19 @@ namespace ProjektOOP
             E_PeakTo.Text = e.PeakTorque.ToString();
         }
 
+        private void LoadModel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UpdateModel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NewModel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

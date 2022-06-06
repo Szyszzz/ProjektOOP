@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProjektOOP"
+        xmlns:local="clr-namespace:ProjektOOP.ObservableCollections"
         mc:Ignorable="d"
         MaxHeight="600"
         MaxWidth="800"
@@ -12,6 +12,9 @@
         Height="450" 
         Width="550"
         Title="Car Creator">
+    <Window.DataContext>
+        <local:ListOfModels/>
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
@@ -72,31 +75,31 @@
 
             <!-- Collumn 1,2 - Car Model Settings Text -->
             <TextBlock Grid.Row="0" Grid.Column="0" FontWeight="Bold">Model:</TextBlock>
-            <Button Grid.Row="0" Grid.Column="1" Margin="5,0,5,0" ToolTip="Save new car Model">Save</Button>
+            <Button Grid.Row="0" Grid.Column="1" Margin="5,0,5,0" Click="NewModel_Click" ToolTip="Save new car Model">Save</Button>
 
             <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">Model Name:</TextBlock>
-            <TextBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="5,0,5,0"></TextBox>
+            <TextBox x:Name="M_Name" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="5,0,5,0"></TextBox>
 
             <TextBlock Grid.Row="4" Grid.Column="0">Year:</TextBlock>
-            <TextBox Grid.Row="5" Grid.Column="0" Margin="5,2,5,2"></TextBox>
+            <TextBox x:Name="M_Year" Grid.Row="5" PreviewTextInput="PreviewTextInput_Numeric"  Grid.Column="0" Margin="5,2,5,2"></TextBox>
 
             <TextBlock Grid.Row="4" Grid.Column="1" >Country:</TextBlock>
-            <TextBox Grid.Row="5" Grid.Column="1" Margin="5,2,5,2"></TextBox>
+            <TextBox x:Name="M_Country" Grid.Row="5" Grid.Column="1" Margin="5,2,5,2"></TextBox>
 
             <TextBlock Grid.Row="6" Grid.Column="0" >Price:</TextBlock>
-            <TextBox Grid.Row="7" Grid.Column="0" Margin="5,2,5,2"></TextBox>
+            <TextBox x:Name="M_Price"  Grid.Row="7" PreviewTextInput="PreviewTextInput_Numeric" Grid.Column="0" Margin="5,2,5,2"></TextBox>
 
             <TextBlock Grid.Row="6" Grid.Column="1">Class:</TextBlock>
-            <TextBox Grid.Row="7" Grid.Column="1" Margin="5,2,5,2"></TextBox>
+            <TextBox x:Name="M_Class" Grid.Row="7" Grid.Column="1" Margin="5,2,5,2"></TextBox>
 
-            <TextBlock Grid.Row="8" Grid.Column="0">Maker ID:</TextBlock>
-            <TextBox Grid.Row="9" Grid.Column="0" Margin="5,2,5,2"></TextBox>
+            <TextBlock Grid.Row="8" Grid.Column="0">Maker</TextBlock>
+            <TextBox x:Name="M_Maker" IsReadOnly="True" Grid.Row="9" PreviewTextInput="PreviewTextInput_Numeric" Grid.Column="0" Margin="5,2,5,2"></TextBox>
 
-            <TextBlock Grid.Row="8" Grid.Column="1">Chassis ID:</TextBlock>
-            <TextBox Grid.Row="9" Grid.Column="1" Margin="5,2,5,2"></TextBox>
+            <TextBlock Grid.Row="8" Grid.Column="1">Chassis</TextBlock>
+            <TextBox x:Name="M_Chassis" IsReadOnly="True" Grid.Row="9" PreviewTextInput="PreviewTextInput_Numeric" Grid.Column="1" Margin="5,2,5,2"></TextBox>
 
-            <TextBlock Grid.Row="10" Grid.Column="0">Engine ID:</TextBlock>
-            <TextBox Grid.Row="11" Grid.Column="0" Margin="5,2,5,2"></TextBox>
+            <TextBlock Grid.Row="10" Grid.Column="0">Engine</TextBlock>
+            <TextBox x:Name="M_Engine" IsReadOnly="True" Grid.Row="11" PreviewTextInput="PreviewTextInput_Numeric" Grid.Column="0" Margin="5,2,5,2"></TextBox>
 
             <!-- Collumn 4,5 - Chassis Settings Text -->
             <TextBlock Grid.Row="0" Grid.Column="3" FontWeight="Bold">Chassis:</TextBlock>
@@ -144,18 +147,40 @@
         </Grid>
 
         <!-- Row 3 - Car Models Preview -->
-        <ListView Grid.Column="1" Grid.Row="4" Height="auto"  MaxHeight="300" Margin="0,5,0,0" Grid.RowSpan="2">
-            <ListView.View>
-                <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Car Models Informations">
-                    <GridViewColumn Header="ID" Width="30"/>
-                    <GridViewColumn Header="Maker Name" Width="100"/>
-                    <GridViewColumn Header="Model Name" Width="100"/>
-                    <GridViewColumn Header="Chassis" Width="100"/>
-                    <GridViewColumn Header="Engine" Width="100"/>
-                    <GridViewColumn Header="Class" Width="100"/>
-                </GridView>
-            </ListView.View>
-        </ListView> 
+        <Grid Grid.Row="5" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <ListView Grid.Column="0" Height="auto"  MaxHeight="300" Margin="0,5,0,0" Grid.RowSpan="2" ItemsSource="{Binding ModelList}">
+                <ListView.View>
+                    <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Car Models Informations">
+                        <GridViewColumn Header="ID" Width="30" DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Header="Maker" Width="60" DisplayMemberBinding="{Binding Maker.MakerName}"/>
+                        <GridViewColumn Header="Model Name" Width="90" DisplayMemberBinding="{Binding ModelName}"/>
+                        <GridViewColumn Header="Chassis" Width="60" DisplayMemberBinding="{Binding Chassis.ChassisName}"/>
+                        <GridViewColumn Header="Engine" Width="60" DisplayMemberBinding="{Binding Engine.EngineName}"/>
+                        <GridViewColumn Header="Country of Origin" Width="120" DisplayMemberBinding="{Binding Country}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="1" Margin="5,7" Width="50" ToolTip="Save new engine" Click="LoadModel_Click">Load</Button>
+                <Button Grid.Row="2" Margin="5,7" Width="50" ToolTip="Save new engine" Click="UpdateModel_Click">Update</Button>
+                <Button Grid.Row="3" Margin="5,7" Width="50" ToolTip="Save new engine" Click="UpdateModel_Click">Delete</Button>
+            </Grid>
+            
+        </Grid>
+        
 
         <!-- Signature -->
         <TextBlock Grid.Row="4" Grid.Column="2" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="130,0,0,0">13477 - Projekt OOP</TextBlock>
