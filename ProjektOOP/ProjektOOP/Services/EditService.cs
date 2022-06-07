@@ -55,13 +55,10 @@ namespace ProjektOOP.Services
             t.ProductionYear = n.ProductionYear;
             t.Price = n.Price;
             t.CarClass = n.CarClass;
-
             t.MakerId = n.MakerId;
             t.Maker = n.Maker;
-
             t.Engine = n.Engine;
             t.EngineId = n.EngineId;
-
             t.Chassis = n.Chassis;
             t.ChassisId = n.ChassisId;
 

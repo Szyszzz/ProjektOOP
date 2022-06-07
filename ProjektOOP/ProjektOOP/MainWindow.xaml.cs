@@ -421,5 +421,18 @@ namespace ProjektOOP
             AddRemove.AddModel(model);
             ListOfModels.Add(model);
         }
+
+        private void RemoveModel_Click(object sender, RoutedEventArgs e)
+        {
+            if (ModelsListView.SelectedIndex <= -1)
+            {
+                //ToDo - Dialog
+                return;
+            }
+
+            AddRemove.RemoveModel((ModelsListView.SelectedItem as CarModels));
+            ListOfModels.Remove((ModelsListView.SelectedItem as CarModels));
+            ModelsListView.SelectedIndex = -1;
+        }
     }
 }

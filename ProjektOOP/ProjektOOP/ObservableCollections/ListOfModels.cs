@@ -23,7 +23,7 @@ namespace ProjektOOP.ObservableCollections
             foreach (CarModels model in collection)
             {
                 model.Engine = context.Engine.Find(model.EngineId);
-                model.Chassis = context.Chassis.Find(model.MakerId);
+                model.Chassis = context.Chassis.Find(model.ChassisId);
                 model.Maker = context.CarMakers.Find(model.MakerId);
             }
 

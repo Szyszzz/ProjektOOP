@@ -177,7 +177,7 @@
                 </Grid.RowDefinitions>
                 <Button Grid.Row="1" Margin="5,7" Width="50" ToolTip="Save new engine" Click="LoadModel_Click">Load</Button>
                 <Button Grid.Row="2" Margin="5,7" Width="50" ToolTip="Save new engine" Click="UpdateModel_Click">Update</Button>
-                <Button Grid.Row="3" Margin="5,7" Width="50" ToolTip="Save new engine" Click="UpdateModel_Click">Delete</Button>
+                <Button Grid.Row="3" Margin="5,7" Width="50" ToolTip="Save new engine" Click="RemoveModel_Click">Delete</Button>
             </Grid>
             
         </Grid>
