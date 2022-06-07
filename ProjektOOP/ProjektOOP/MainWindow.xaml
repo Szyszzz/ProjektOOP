@@ -153,7 +153,7 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
 
-            <ListView Grid.Column="0" Height="auto"  MaxHeight="300" Margin="0,5,0,0" Grid.RowSpan="2" ItemsSource="{Binding ModelList}">
+            <ListView x:Name="ModelsListView" Grid.Column="0" Height="auto"  MaxHeight="300" Margin="0,5,0,0" Grid.RowSpan="2" ItemsSource="{Binding ModelList}">
                 <ListView.View>
                     <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Car Models Informations">
                         <GridViewColumn Header="ID" Width="30" DisplayMemberBinding="{Binding Id}"/>
@@ -161,7 +161,8 @@
                         <GridViewColumn Header="Model Name" Width="90" DisplayMemberBinding="{Binding ModelName}"/>
                         <GridViewColumn Header="Chassis" Width="60" DisplayMemberBinding="{Binding Chassis.ChassisName}"/>
                         <GridViewColumn Header="Engine" Width="60" DisplayMemberBinding="{Binding Engine.EngineName}"/>
-                        <GridViewColumn Header="Country of Origin" Width="120" DisplayMemberBinding="{Binding Country}"/>
+                        <GridViewColumn Header="Country of Origin" Width="100" DisplayMemberBinding="{Binding Country}"/>
+                        <GridViewColumn Header="Price" Width="60" DisplayMemberBinding="{Binding Price}"/>
                     </GridView>
                 </ListView.View>
             </ListView>

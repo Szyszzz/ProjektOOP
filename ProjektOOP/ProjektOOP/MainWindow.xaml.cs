@@ -27,6 +27,7 @@ namespace ProjektOOP
     public partial class MainWindow : Window
     {
         AddRemoveService AddRemove = new AddRemoveService();
+        EditService editService = new EditService();
 
         private CarMakers TargetMaker = null;
         private Engine TargetEngine = null;
@@ -116,6 +117,52 @@ namespace ProjektOOP
                 makersWindow.ParentWindow = this;
                 StartWindowOnTheLeft(makersWindow);
             }
+        }
+
+        public CarModels UpdateNotEmptyModel(CarModels m)
+        {
+            if((ModelsListView.SelectedItem as CarModels) == null)
+            {
+                //ToDo - Dialog
+                return null;
+            }
+
+            CarModels valid = (ModelsListView.SelectedItem as CarModels);
+
+            if (!string.IsNullOrEmpty(M_Name.Text))
+                valid.ModelName = m.ModelName;
+
+            if (!string.IsNullOrEmpty(M_Country.Text))
+                valid.Country = m.Country;
+
+            if (!string.IsNullOrEmpty(M_Year.Text))
+                valid.ProductionYear = m.ProductionYear;
+
+            if (!string.IsNullOrEmpty(M_Price.Text))
+                valid.Price = m.Price;
+
+            if (!string.IsNullOrEmpty(M_Class.Text))
+                valid.CarClass = m.CarClass;
+
+            if (!string.IsNullOrEmpty(M_Maker.Text))
+            {
+                valid.Maker = m.Maker;
+                valid.MakerId = m.MakerId;
+            }
+
+            if(!string.IsNullOrEmpty(M_Engine.Text))
+            {
+                valid.Engine = m.Engine;
+                valid.EngineId = m.EngineId;
+            }
+
+            if(!string.IsNullOrEmpty(M_Chassis.Text))
+            {
+                valid.Chassis = m.Chassis;
+                valid.ChassisId = m.ChassisId;
+            }
+
+            return valid;
         }
 
         public CarModels BuildCurrentCarModel()
@@ -331,14 +378,41 @@ namespace ProjektOOP
             E_PeakTo.Text = e.PeakTorque.ToString();
         }
 
+        public void LoadModel(CarModels m)
+        {
+            M_Name.Text = m.ModelName;
+            M_Country.Text = m.Country;
+            M_Price.Text = m.Price.ToString();
+            M_Year.Text = m.ProductionYear.ToString();
+            M_Class.Text = m.CarClass.ToString();
+
+            UpdateTargetChassis(m.Chassis);
+            UpdateTargetEngine(m.Engine);
+            UpdateTargetMaker(m.Maker);
+        }
+
         private void LoadModel_Click(object sender, RoutedEventArgs e)
         {
+            if (ModelsListView.SelectedIndex <= -1)
+            {
+                //ToDo - Dialog
+                return;
+            }
 
+            LoadModel((ModelsListView.SelectedItem as CarModels));
         }
 
         private void UpdateModel_Click(object sender, RoutedEventArgs e)
         {
+            if(ModelsListView.SelectedIndex <= -1)
+            {
+                //ToDo - Dialog
+                return;
+            }
 
+            CarModels newModel = UpdateNotEmptyModel(BuildCurrentCarModel());
+            ListOfModels.Edit((ModelsListView.SelectedItem as CarModels), newModel);
+            editService.EditModel((ModelsListView.SelectedItem as CarModels), newModel);
         }
 
         private void NewModel_Click(object sender, RoutedEventArgs e)

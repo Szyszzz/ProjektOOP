@@ -47,5 +47,26 @@ namespace ProjektOOP.Services
             context.Engine.Update(targetToChange);
             context.SaveChanges();
         }
+
+        public void EditModel(CarModels t, CarModels n)
+        {
+            t.ModelName = n.ModelName;
+            t.Country = n.Country;
+            t.ProductionYear = n.ProductionYear;
+            t.Price = n.Price;
+            t.CarClass = n.CarClass;
+
+            t.MakerId = n.MakerId;
+            t.Maker = n.Maker;
+
+            t.Engine = n.Engine;
+            t.EngineId = n.EngineId;
+
+            t.Chassis = n.Chassis;
+            t.ChassisId = n.ChassisId;
+
+            context.CarModels.Update(t);
+            context.SaveChanges();
+        }
     }
 }
