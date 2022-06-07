@@ -61,6 +61,18 @@ namespace ProjektOOP
             return valid;
         }
 
+        private void LoadEngine_Click(object sender, RoutedEventArgs e)
+        {
+            if (EngineListView.SelectedIndex <= -1)
+            {
+                //ToDo Dialog
+                return;
+            }
+
+            ParentWindow.LoadEngine((EngineListView.SelectedItem as Engine));
+            ParentWindow.UpdateTargetEngine(EngineListView.SelectedItem as Engine);
+        }
+
         private void DeleteEngine_Click(object sender, RoutedEventArgs e)
         {
             if(EngineListView.SelectedIndex <= -1)
@@ -74,18 +86,6 @@ namespace ProjektOOP
             addRemove.RemoveEngine((EngineListView.SelectedItem as Engine));
             ListOfEngines.Remove((EngineListView.SelectedItem as Engine));
             EngineListView.SelectedIndex = -1;
-        }
-
-        private void LoadEngine_Click(object sender, RoutedEventArgs e)
-        {
-            if (EngineListView.SelectedIndex <= -1)
-            {
-                //ToDo Dialog
-                return;
-            }
-
-            ParentWindow.LoadEngine((EngineListView.SelectedItem as Engine));
-            ParentWindow.UpdateTargetEngine(EngineListView.SelectedItem as Engine);
         }
 
         private void UpdateEngine_Click(object sender, RoutedEventArgs e)

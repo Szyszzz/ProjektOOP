@@ -358,6 +358,13 @@ namespace ProjektOOP
             ListOfEngines.Add(engine);
         }
 
+        private void NewModel_Click(object sender, RoutedEventArgs e)
+        {
+            CarModels model = BuildCurrentCarModel();
+            AddRemove.AddModel(model);
+            ListOfModels.Add(model);
+        }
+
         public void LoadChassis(Chassis c)
         {
             C_Name.Text = c.ChassisName;
@@ -415,12 +422,6 @@ namespace ProjektOOP
             editService.EditModel((ModelsListView.SelectedItem as CarModels), newModel);
         }
 
-        private void NewModel_Click(object sender, RoutedEventArgs e)
-        {
-            CarModels model = BuildCurrentCarModel();
-            AddRemove.AddModel(model);
-            ListOfModels.Add(model);
-        }
 
         private void RemoveModel_Click(object sender, RoutedEventArgs e)
         {

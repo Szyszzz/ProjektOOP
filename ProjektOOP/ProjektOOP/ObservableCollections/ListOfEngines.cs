@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Data;
 
 namespace ProjektOOP.ObservableCollections
@@ -20,7 +21,18 @@ namespace ProjektOOP.ObservableCollections
             return new ObservableCollection<Engine>(context.Engine);
         }
 
-        public static void Add(Engine engine) => EngineList.Add(engine);
+        private static bool IsWindowOpen<T>(string name = "") where T : Window
+        {
+            return string.IsNullOrEmpty(name)
+                ? Application.Current.Windows.OfType<T>().Any()
+                : Application.Current.Windows.OfType<T>().Any(w => w.Name.Equals(name));
+        }
+
+        public static void Add(Engine engine)
+        {
+            if(IsWindowOpen<EnginesWindow>())
+                EngineList.Add(engine);
+        }
 
         public static void Remove(Engine engine) => EngineList.Remove(engine);
 

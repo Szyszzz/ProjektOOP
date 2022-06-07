@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Data;
 
 namespace ProjektOOP.ObservableCollections
@@ -20,7 +21,18 @@ namespace ProjektOOP.ObservableCollections
             return new ObservableCollection<Chassis>(context.Chassis);
         }
 
-        public static void Add(Chassis chassis) => ChassisList.Add(chassis);
+        private static bool IsWindowOpen<T>(string name = "") where T : Window
+        {
+            return string.IsNullOrEmpty(name)
+                ? Application.Current.Windows.OfType<T>().Any()
+                : Application.Current.Windows.OfType<T>().Any(w => w.Name.Equals(name));
+        }
+
+        public static void Add(Chassis chassis)
+        {
+            if(IsWindowOpen<ChassisWindow>())
+                ChassisList.Add(chassis);
+        }
 
         public static void Remove(Chassis chassis) => ChassisList.Remove(chassis);
 
