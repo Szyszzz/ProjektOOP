@@ -17,7 +17,17 @@ namespace ProjektOOP.ObservableCollections
         public static ObservableCollection<CarModels> GetEngine()
         {
             ProjektContext context = new ContextFactory().CreateDbContext();
-            return new ObservableCollection<CarModels>(context.CarModels);
+
+            ObservableCollection<CarModels> collection = new ObservableCollection<CarModels>(context.CarModels);
+
+            foreach (CarModels model in collection)
+            {
+                model.Engine = context.Engine.Find(model.EngineId);
+                model.Chassis = context.Chassis.Find(model.MakerId);
+                model.Maker = context.CarMakers.Find(model.MakerId);
+            }
+
+            return collection;
         }
 
         public static void Add(CarModels model) => ModelList.Add(model);

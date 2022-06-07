@@ -117,7 +117,66 @@ namespace ProjektOOP
                 StartWindowOnTheLeft(makersWindow);
             }
         }
-        
+
+        public CarModels BuildCurrentCarModel()
+        {
+            CarModels m = new CarModels();
+
+            if (String.IsNullOrEmpty(M_Name.Text))
+                m.ModelName = "NewModel";
+            else
+                m.ModelName = M_Name.Text;
+
+            if (String.IsNullOrEmpty(M_Name.Text))
+                m.Country = "";
+            else
+                m.Country = M_Country.Text;
+
+            try
+            {
+                m.ProductionYear = int.Parse(M_Year.Text);
+            }
+            catch (FormatException)
+            {
+                m.ProductionYear = 1998;
+            }
+
+            try
+            {
+                m.Price = decimal.Parse(M_Price.Text);
+            }
+            catch (FormatException)
+            {
+                m.Price = 3000.00M;
+            }
+
+            if (string.IsNullOrEmpty(M_Class.Text))
+                m.CarClass = "Hatchback";
+            else
+                m.CarClass = M_Class.Text;
+
+            if (TargetMaker != null)
+            {
+                m.Maker = TargetMaker;
+                m.MakerId = TargetMaker.Id;
+            }
+
+
+            if (TargetEngine != null) 
+            { 
+            m.Engine = TargetEngine;
+            m.EngineId = TargetEngine.Id;
+            }
+
+            if (TargetChassis != null)
+            {
+                m.Chassis = TargetChassis;
+                m.ChassisId = TargetChassis.Id;
+            }
+
+            return m;
+        }
+
         public Engine BuildCurrentEngine()
         {
             Engine e = new Engine();
@@ -284,7 +343,9 @@ namespace ProjektOOP
 
         private void NewModel_Click(object sender, RoutedEventArgs e)
         {
-
+            CarModels model = BuildCurrentCarModel();
+            AddRemove.AddModel(model);
+            ListOfModels.Add(model);
         }
     }
 }
