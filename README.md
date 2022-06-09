@@ -1,5 +1,5 @@
 # ProjektOOP
-Projekt zaliczeniowy z Programowania Obiektowego.
+Object-oriented Programming project
 
 Basic Car Maker application.
 
